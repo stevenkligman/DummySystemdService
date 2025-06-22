@@ -1,0 +1,14 @@
+[Unit]
+Description=Dummy systemd service
+Wants=network.target
+After=syslog.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/mnt/c/Users/stvnk/Documents/dummy.sh
+Restart=on-failure
+RestartSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
